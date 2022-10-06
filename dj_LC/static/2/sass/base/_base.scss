@@ -1,0 +1,48 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	position: relative;
+	margin: 0;
+	background-color: #e5f2fe;
+	background-image: url('./../img/bg/bg-lines.svg');
+	font-family: 'Poppins', sans-serif;
+}
+
+img {
+	display: block;
+	max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+	margin: 0;
+}
+
+ul,
+li {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+button {
+	padding: 0;
+	border: none;
+	background: none;
+	cursor: pointer;
+}
+
+.text-right {
+	text-align: right;
+}

@@ -1,0 +1,17 @@
+.assets {
+    flex-grow: 1;
+}
+
+.assets__header {
+    margin-bottom: 24px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.assets__cards {
+    display: flex;
+
+    & > * + * {
+        margin-left: 30px;
+    }
+}

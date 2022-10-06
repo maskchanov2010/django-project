@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+	{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>title</title>
+    <link rel="stylesheet" href="{% static '2/css/main.css'%}">
+    		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+			rel="stylesheet"
+		/>
+</head>
+<body>   
+    <div class="dashboard">
+			<div class="dashboard__nav">
+				<nav class="nav">
+					<div class="nav__logo">
+						<a href="#" class="logo">
+							<img src="{% static '3/img/nav-icons/logo.svg' %}" alt="Logo" />
+						</a>
+					</div>
+					<div class="nav__icons">
+						<ul class="nav__icons-list">
+							<li>
+								<a href="/"><img src="{% static '3/img/nav-icons/dashboard.svg' %}" alt="" /></a>
+							</li>
+							<li>
+								<a href="/4/"><img src="{% static '3/img/nav-icons/cube.svg' %}" alt="" /></a>
+							</li>
+							<li>
+								<a href="/3/"><img src="{% static '3/img/nav-icons/charts.svg' %}" alt="" /></a>
+							</li>
+							<li>
+								<a href="/2/"><img src="{% static '3/img/nav-icons/user.svg'%}" alt="" /></a>
+							</li>
+							<li class="nav__icons-list-last-icon">
+								<a href="#"><img src="{% static '3/img/nav-icons/login.svg'%}" alt="" /></a>
+							</li>
+						</ul>
+					</div>
+				</nav>
+			</div>
+		<div class="dashboard__body">
+		    <div class="dashboard__header">
+					<h1 class="title-1">Статистика</h1>
+					<div class="dashboard__header-icons">
+
+
+						<div class="user-profile">
+							<a href="#" class="user-profile__avatar">
+								<img src="{% static '3/img/top-icons/avatar.svg'%}" alt="Avatar" />
+							</a>
+							<button class="user-profile__nav-button">София М.</button>
+						</div>
+					</div>
+            </div>
+            <div class="title-static">Баллы об успеваемости и поведения ребёнка </div>
+            <div class="dashboard__content-static">
+                
+                <div class="static-behaviour">
+                    <div class="static-behaviour-velue">Поведение</div>
+
+                    <div class="static-behaviour-Lesson">
+                      {{ a }} балла(ов) по поведению
+                    </div>
+                </div>
+                <div class="static-behaviour">
+                    <div class="static-behaviour-velue">Успеваемость</div>
+
+                    <div class="static-behaviour-Lesson">
+							{{ b }}  балла(ов) по успеваемости
+						</div>
+                </div>
+            </div>
+		</div>	
+</div>
+</body>
+</html>

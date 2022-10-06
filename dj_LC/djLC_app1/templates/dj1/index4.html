@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+	{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>title</title>
+    <link rel="stylesheet" href="{% static '4/css/main.css'%}">
+    		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+			rel="stylesheet"
+		/>
+		 <style>
+      table, td, th {
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+      table { width: 100%; }
+      th { height: 50px; }
+    </style>
+</head>
+<body>   
+    <div class="dashboard">
+			<div class="dashboard__nav">
+				<nav class="nav">
+
+
+					<div class="nav__logo">
+						<a href="#" class="logo">
+							<img src="{% static '3/img/nav-icons/logo.svg' %}" alt="Logo" />
+						</a>
+					</div>
+					<div class="nav__icons">
+						<ul class="nav__icons-list">
+							<li>
+								<a href="/"><img src="{% static '3/img/nav-icons/dashboard.svg' %}" alt="" /></a>
+							</li>
+							<li>
+								<a href=""><img src="{% static '3/img/nav-icons/cube.svg' %}" alt="" /></a>
+							</li>
+							<li>
+								<a href="/3/"><img src="{% static '3/img/nav-icons/charts.svg' %}" alt="" /></a>
+							</li>
+							<li>
+								<a href="/2/"><img src="{% static '3/img/nav-icons/user.svg'%}" alt="" /></a>
+							</li>
+							<li class="nav__icons-list-last-icon">
+								<a href="#"><img src="{% static '3/img/nav-icons/login.svg'%}" alt="" /></a>
+							</li>
+
+						</ul>
+					</div>
+				</nav>
+			</div>
+    <div class="dashboard__body">
+		    <div class="dashboard__header">
+					<h1 class="title-1">Расписание</h1>
+					<div class="dashboard__header-icons">
+
+
+						<div class="user-profile">
+							<a href="#" class="user-profile__avatar">
+								<img src="../../../static/3/img/top-icons/avatar.svg" alt="Avatar" />
+							</a>
+							<button class="user-profile__nav-button">София М.</button>
+						</div>
+					</div>
+            </div>
+            <div class="title-static">расписание уроков</div>
+               
+            <div class="table-SH">
+                <table align='center'>
+
+          {% for j in schedule_list1 %}
+
+					{% for ni in j %}
+
+	<tr>					<td> {{ ni.type2 }}
+</td></tr>
+		  			{% endfor %}
+		  {% endfor %}
+
+    </table>
+            </div>
+            
+		</div>	
+</div>
+</body>
+</html>

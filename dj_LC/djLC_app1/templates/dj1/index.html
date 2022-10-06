@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+	{% load static %}
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Личный кабинет</title>
+		<link rel="stylesheet" href="{% static '1/css/main.css' %}" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+	<body>
+		  <div class="dashboard">
+			<div class="dashboard__nav">
+				<nav class="nav">
+					<div class="nav__logo">
+						<a href="#" class="logo">
+							<img src="{% static '3/img/nav-icons/logo.svg' %}" alt="Logo" />
+						</a>
+					</div>
+					<div class="nav__icons">
+						<ul class="nav__icons-list">
+							<li>
+								<a href="/"><img src="{% static '3/img/nav-icons/dashboard.svg' %}" alt="" /></a>
+							</li>
+							<li>
+								<a href="/4/"><img src="{% static '3/img/nav-icons/cube.svg' %}" alt="" /></a>
+							</li>
+							<li>
+								<a href="3/"><img src="{% static '3/img/nav-icons/charts.svg' %}" alt="" /></a>
+							</li>
+							<li>
+								<a href="2/"><img src="{% static '3/img/nav-icons/user.svg'%}" alt="" /></a>
+							</li>
+							<li class="nav__icons-list-last-icon">
+								<a href="#"><img src="{% static '3/img/nav-icons/login.svg'%}" alt="" /></a>
+							</li>
+						</ul>
+					</div>
+				</nav>
+			</div>
+			<div class="dashboard__body">
+				<!-- dashboard__header -->
+				<div class="dashboard__header">
+					<h1 class="title-1">Главная</h1>
+					<div class="dashboard__header-icons">
+
+
+						<div class="user-profile">
+							<a href="#" class="user-profile__avatar">
+								<img src="{% static '3/img/top-icons/avatar.svg'%}" alt="Avatar" />
+							</a>
+							<button class="user-profile__nav-button">София М.</button>
+						</div>
+					</div>
+				</div>
+				<!-- // dashboard__header -->
+
+				<!-- dashboard__cards -->
+				<div class="dashboard__cards">
+					<!-- portfolio -->
+					<div class="portfolio">
+						<div class="portfolio__header">
+							<h2 class="title-3">Статистика ребёнка</h2>
+						</div>
+
+						<!-- portfolio__card -->
+						<div class="portfolio__card">
+							<!-- balance-card -->
+							<div class="balance-card">
+								<div class="balance-card__balance">
+									<div class="balance-card__balance-value">Результат</div>
+								</div>
+
+								<div class="balance-card__settings">
+									<a href="" class="a-title-3">Посмотреть подробнее  </a>
+
+								</div>
+								<div class="balance-card__balance-desc1">{{ a }} балла(ов)</div>
+								<div class="balance-card__period">
+									<a class="balance-card__period-btn">Поведение</a>
+									<a
+										class="
+											balance-card__period-btn
+											balance-card__period-btn--active
+										"
+									>Успеваемость
+									</a>
+								</div>
+
+							</div>
+							<!-- // balance-card -->
+						</div>
+						<!-- // portfolio__card -->
+					</div>
+					<!-- // portfolio -->
+
+					<!-- assets -->
+					<div class="assets">
+						<div class="assets__header">
+							<h2 class="title-3">История уроков</h2>
+							<a href="" class="a-title-3"><h4  class="h4-titl3-4">Посмотреть подробнее</h4></a>
+                                        
+						</div>
+						<div class="assets__cards">
+							{% for history in history_list %}
+							<div class="asset-card">
+								<div class="asset-card__header">
+									<div class="asset-card__value">{{ history.type2 }}</div>
+									<div class="asset-card__fiat">{{ history.date_end.date }}</div>
+								</div>
+
+								<div class="asset-card__footer">
+									<div class="asset-card__icon">{{ history.evaluations1 }}</div>
+									<div class="asset-card__income">{{ history.date_end.time }}</div>
+								</div>
+
+								<div class="asset-card__settings">
+									<button class="button-more">
+										<span class="button-more__icon"></span>
+									</button>
+								</div>
+							</div>
+						{% endfor %}
+						</div>
+					</div>
+					<!-- // assets -->
+				</div>
+				<!-- // dashboard__cards -->
+
+				<!-- dashboard__market -->
+				<div class="dashboard__market">
+					<!-- market -->
+					<div class="market">
+						<div class="market__header">
+							<h2 class="title-2">Расписание ваших уроков</h2>
+							<div class="market__header-buttons">
+								<p class="dropdown-btn">Сегодня</p>
+								<button class="btn-market__header-buttons">Посмотреть подробнее</button>
+							</div>
+						</div>
+						<div class="market__table">
+							<table class="market-table" cellpadding="0" cellspacing="0">
+								<thead>
+									<tr>
+										<th>Тип урока</th>
+										<th>Время начала</th>
+										<th>Время окончания</th>
+										<th class="text-right">Имя учителя</th>
+									</tr>
+								</thead>
+								<tbody>
+											<!--start-->
+											{% for i in schedule %}
+									<tr>
+										<td>
+											<div class="coin">
+												<div class="coin__text">
+													<div class="coin__title">{{ i.type2 }}</div>
+												</div>
+											</div>
+										</td>
+										<td class="market-table__price">
+                                            {{ i.date_beginning }}
+                                        </td>
+										<td class="market-table__chanee">{{ i.date_end }}</td>
+										<td class="market-table__cap text-right">
+				    						{% for j in i.teacher.all %}
+											{{ j.name }}
+											{% endfor %}
+										</td>
+									</tr>
+											{% endfor %}
+								<!--finish-->
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<!-- // market -->
+
+
+                    <!-- earn-free -->
+<!--
+                    <div class="earn-free-wrapper">
+                        <div class="earn-free">
+                            <div class="earn-free__title">
+                                Также вы можете поставить дополнительный урок прямо здесь</div>
+                            <a href="#" class="earn-free__button">Попробовать</a>
+                        </div>
+                    </div>
+-->
+                    <!-- // earn-free -->
+
+				</div>
+				<!-- // dashboard__market -->
+			</div>
+		</div>
+	</body>
+</html>

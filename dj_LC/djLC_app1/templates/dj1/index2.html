@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+	{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>title</title>
+    <link rel="stylesheet" href="{% static '3/css/main.css' %}">
+</head>
+<body>
+  <div class="dashboard">
+			<div class="dashboard__nav">
+				<nav class="nav">
+					<div class="nav__logo">
+						<a href="#" class="logo">
+							<img src="{% static '3/img/nav-icons/logo.svg' %}" alt="Logo" />
+						</a>
+					</div>
+					<div class="nav__icons">
+						<ul class="nav__icons-list">
+							<li>
+								<a href="/"><img src="{% static '3/img/nav-icons/dashboard.svg' %}" alt="" /></a>
+							</li>
+							<li>
+								<a href="/4/"><img src="{% static '3/img/nav-icons/cube.svg' %}" alt="" /></a>
+							</li>
+							<li>
+								<a href="/3/"><img src="{% static '3/img/nav-icons/charts.svg' %}" alt="" /></a>
+							</li>
+							<li>
+								<a href="/2/"><img src="{% static '3/img/nav-icons/user.svg'%}" alt="" /></a>
+							</li>
+							<li class="nav__icons-list-last-icon">
+								<a href="#"><img src="{% static '3/img/nav-icons/login.svg'%}" alt="" /></a>
+							</li>
+						</ul>
+					</div>
+				</nav>
+			</div>
+		<div class="dashboard__body">
+				<!-- dashboard__header -->
+				<div class="dashboard__header">
+					<h1 class="title-1">История уроков</h1>
+					<div class="dashboard__header-icons">
+
+
+						<div class="user-profile">
+							<a href="#" class="user-profile__avatar">
+								<img src="{% static '3/img/top-icons/avatar.svg'%}" alt="Avatar" />
+							</a>
+							<button class="user-profile__nav-button">София М.</button>
+						</div>
+					</div>
+				</div>
+                <div class="title-static">История уроков на которых учитель дал информацию</div>
+						<div class="assets__cards">
+							{% for history in history_list  %}
+							<div class="asset-card">
+								<div class="asset-card__header">
+									<div class="asset-card__value">{{ history.type2 }}</div>
+									<div class="asset-card__fiat">{{ history.date_end.date }}</div>
+								</div>
+
+								<div class="asset-card__footer">
+									<div class="asset-card__icon">{{ history.evaluations1 }}</div>
+									<div class="asset-card__income">{{ history.date_end.time }}</div>
+								</div>
+
+								<div class="asset-card__settings">
+									<button class="button-more">
+										<span class="button-more__icon"></span>
+									</button>
+								</div>
+							</div>
+						{% endfor %}
+						</div>
+		</div>	
+</div>
+</body>
+</html>

@@ -1,0 +1,52 @@
+.market-table {
+	width: 100%;
+    border-collapse: collapse;
+
+
+	th,
+	td {
+		text-align: left;
+        padding: 0;
+
+	}
+
+	thead {
+		th {
+            padding-bottom: 22px;
+			font-size: 13px;
+			letter-spacing: 0.02em;
+            font-weight: 400;
+			color: #8290a0;
+		}
+	}
+
+    tbody td { padding-bottom: 20px; }
+
+	td:not(:last-child) {
+		padding-right: 15px;
+	}
+}
+
+.market-table__price {
+	font-weight: 500;
+	font-size: 16px;
+	letter-spacing: 0.02em;
+	color: #000000;
+}
+
+.market-table__chanee {
+	font-weight: 500;
+	font-size: 15px;
+	letter-spacing: 0.02em;
+	color: #4ba582;
+}
+
+.market-table__cap {
+	font-weight: 500;
+	font-size: 17px;
+	letter-spacing: 0.02em;
+	color: #000000;
+}
+
+.market-table__rate {
+}
