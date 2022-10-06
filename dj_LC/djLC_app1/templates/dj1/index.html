@@ -170,8 +170,8 @@
                                         </td>
 										<td class="market-table__chanee">{{ i.date_end }}</td>
 										<td class="market-table__cap text-right">
-				    						{% for j in i.teacher.all %}
-											{{ j.name }}
+											{% for nj in schedule.teacher.all %}
+												{{ nj.name }}
 											{% endfor %}
 										</td>
 									</tr>
